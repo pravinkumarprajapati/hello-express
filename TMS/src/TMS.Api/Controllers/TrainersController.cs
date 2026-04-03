@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TMS.Application.Contracts;
 using TMS.Application.DTOs;
@@ -5,6 +6,7 @@ using TMS.Application.DTOs;
 namespace TMS.Api.Controllers;
 
 [ApiController]
+[Authorize(Policy = "TrainerPolicy")]
 [Route("api/[controller]")]
 public class TrainersController : ControllerBase
 {

@@ -22,5 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\TMS.Application\TMS.Application.csproj" />
     <ProjectReference Include="..\..\src\TMS.Infrastructure\TMS.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\TMS.Web\TMS.Web.csproj" />
+    <ProjectReference Include="..\..\src\TMS.Api\TMS.Api.csproj" />
   </ItemGroup>
 </Project>
