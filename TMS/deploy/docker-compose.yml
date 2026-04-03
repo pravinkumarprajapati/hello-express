@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  tms-api:
+    build:
+      context: ../..
+      dockerfile: TMS/deploy/Dockerfile.api
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  tms-web:
+    build:
+      context: ../..
+      dockerfile: TMS/deploy/Dockerfile.web
+    ports:
+      - "8081:8081"
+    depends_on:
+      - tms-api

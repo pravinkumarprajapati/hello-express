@@ -1,0 +1,35 @@
+name: tms-ci
+
+on:
+  push:
+    paths:
+      - 'TMS/**'
+      - '.github/workflows/tms-ci.yml'
+  pull_request:
+    paths:
+      - 'TMS/**'
+      - '.github/workflows/tms-ci.yml'
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore TMS
+
+      - name: Build
+        run: dotnet build TMS --configuration Release --no-restore
+
+      - name: Unit tests
+        run: dotnet test TMS/tests/TMS.UnitTests --configuration Release --no-build
+
+      - name: Integration tests
+        run: dotnet test TMS/tests/TMS.IntegrationTests --configuration Release --no-build
