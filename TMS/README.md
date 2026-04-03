@@ -4,6 +4,7 @@ This repository contains the initial module-by-module implementation for the Tra
 
 ## Module 1
 
+## Module 1 (Current)
 - Clean Architecture project skeleton
 - Trainer Profile domain model
 - Skill mapping model with proficiency levels
@@ -69,3 +70,8 @@ This repository contains the initial module-by-module implementation for the Tra
 ## Planned Next Modules
 1. Production deployment hardening
 2. End-to-end authenticated flow tests
+## Planned Next Modules
+1. Scheduling and assignment engine
+2. Leave synchronization and auto reassignment
+3. Notification orchestration (SendGrid + Azure Communication Services)
+4. Reports and dashboard

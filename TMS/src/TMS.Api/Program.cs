@@ -21,6 +21,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddHostedService<LeaveSyncBackgroundService>();
+builder.Services.AddInfrastructureServices();
 
 var app = builder.Build();
 
@@ -35,5 +36,6 @@ app.UseMiddleware<SecurityHeadersMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<TelemetryEnrichmentMiddleware>();
+app.UseAuthorization();
 app.MapControllers();
 app.Run();

@@ -6,6 +6,9 @@ using TMS.Infrastructure.Persistence;
 using TMS.Infrastructure.Repositories;
 using TMS.Infrastructure.Repositories.Sql;
 using TMS.Infrastructure.Telemetry;
+using Microsoft.Extensions.DependencyInjection;
+using TMS.Application.Contracts;
+using TMS.Infrastructure.Repositories;
 
 namespace TMS.Infrastructure.DependencyInjection;
 
@@ -38,6 +41,9 @@ public static class InfrastructureServiceCollectionExtensions
         services.AddSingleton<IEmailSender, SendGridEmailSender>();
         services.AddSingleton<ISmsSender, AzureCommunicationSmsSender>();
         services.AddSingleton<ITelemetryEventPublisher, AppInsightsTelemetryEventPublisher>();
+    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
+    {
+        services.AddSingleton<ITrainerRepository, InMemoryTrainerRepository>();
         return services;
     }
 }
