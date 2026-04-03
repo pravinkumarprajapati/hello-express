@@ -18,12 +18,18 @@ This repository contains the initial module-by-module implementation for the Tra
 - Assignment API endpoint
 - Unit tests for assignment outcomes
 
-## Module 3 (Current)
+## Module 3
+
 - HRMS leave pull synchronization
 - Auto reassignment trigger for impacted sessions
 - 60-second background sync worker
 - Mock HRMS/LMS APIs
 
+## Module 4 (Current)
+- Notification templates and configuration toggles
+- Notification dispatch service (email + SMS adapters)
+- Notification API endpoints and audit logging
+
 ## Planned Next Modules
-1. Notification orchestration (SendGrid + Azure Communication Services)
-2. Reports and dashboard
+1. Reports and dashboard
+2. SQL Server persistence migration

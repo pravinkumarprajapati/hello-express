@@ -11,6 +11,9 @@ public static class InfrastructureServiceCollectionExtensions
         services.AddSingleton<ITrainerRepository, InMemoryTrainerRepository>();
         services.AddSingleton<ITrainingScheduleRepository, InMemoryTrainingScheduleRepository>();
         services.AddSingleton<IHrmsLeaveProvider, InMemoryHrmsLeaveProvider>();
+        services.AddSingleton<INotificationRepository, InMemoryNotificationRepository>();
+        services.AddSingleton<IEmailSender, SendGridEmailSender>();
+        services.AddSingleton<ISmsSender, AzureCommunicationSmsSender>();
         return services;
     }
 }

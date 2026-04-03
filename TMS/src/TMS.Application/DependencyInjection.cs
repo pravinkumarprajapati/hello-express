@@ -12,6 +12,7 @@ public static class DependencyInjection
         services.AddScoped<IAssignmentEngineService, AssignmentEngineService>();
         services.AddScoped<IReassignmentService, ReassignmentService>();
         services.AddScoped<ILeaveSyncService, LeaveSyncService>();
+        services.AddScoped<INotificationService, NotificationService>();
         return services;
     }
 }
