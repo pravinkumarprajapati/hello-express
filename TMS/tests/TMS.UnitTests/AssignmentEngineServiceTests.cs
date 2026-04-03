@@ -75,5 +75,14 @@ public class AssignmentEngineServiceTests
 
         public Task SaveAssignmentsAsync(IEnumerable<TrainingAssignment> assignments, CancellationToken cancellationToken = default)
             => Task.CompletedTask;
+
+        public Task<IReadOnlyCollection<TrainingSession>> GetSessionsByTrainerAsync(Guid trainerId, CancellationToken cancellationToken = default)
+            => Task.FromResult((IReadOnlyCollection<TrainingSession>)Array.Empty<TrainingSession>());
+
+        public Task UpsertLeavesAsync(IEnumerable<LeaveRecord> leaves, CancellationToken cancellationToken = default)
+            => Task.CompletedTask;
+
+        public Task ClearAssignmentsForSessionAsync(Guid sessionId, CancellationToken cancellationToken = default)
+            => Task.CompletedTask;
     }
 }

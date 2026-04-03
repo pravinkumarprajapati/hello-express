@@ -11,13 +11,19 @@ This repository contains the initial module-by-module implementation for the Tra
 - In-memory repository implementation for development bootstrap
 - Unit tests for trainer service behavior
 
-## Module 2 (Current)
+## Module 2
+
 - Scheduling domain model
 - Baseline auto-assignment engine
 - Assignment API endpoint
 - Unit tests for assignment outcomes
 
+## Module 3 (Current)
+- HRMS leave pull synchronization
+- Auto reassignment trigger for impacted sessions
+- 60-second background sync worker
+- Mock HRMS/LMS APIs
+
 ## Planned Next Modules
-1. Leave synchronization and auto reassignment
-2. Notification orchestration (SendGrid + Azure Communication Services)
-3. Reports and dashboard
+1. Notification orchestration (SendGrid + Azure Communication Services)
+2. Reports and dashboard

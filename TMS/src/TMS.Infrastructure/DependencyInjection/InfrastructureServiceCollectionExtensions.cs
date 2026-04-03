@@ -10,6 +10,7 @@ public static class InfrastructureServiceCollectionExtensions
     {
         services.AddSingleton<ITrainerRepository, InMemoryTrainerRepository>();
         services.AddSingleton<ITrainingScheduleRepository, InMemoryTrainingScheduleRepository>();
+        services.AddSingleton<IHrmsLeaveProvider, InMemoryHrmsLeaveProvider>();
         return services;
     }
 }

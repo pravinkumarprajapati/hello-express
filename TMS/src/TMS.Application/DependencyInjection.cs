@@ -10,6 +10,8 @@ public static class DependencyInjection
     {
         services.AddScoped<ITrainerService, TrainerService>();
         services.AddScoped<IAssignmentEngineService, AssignmentEngineService>();
+        services.AddScoped<IReassignmentService, ReassignmentService>();
+        services.AddScoped<ILeaveSyncService, LeaveSyncService>();
         return services;
     }
 }

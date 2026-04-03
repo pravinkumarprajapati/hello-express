@@ -1,15 +1,8 @@
-using TMS.Api.BackgroundServices;
-using TMS.Application;
-using TMS.Infrastructure.DependencyInjection;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddApplicationServices();
-builder.Services.AddInfrastructureServices();
-builder.Services.AddHostedService<LeaveSyncBackgroundService>();
 
 var app = builder.Build();
 
@@ -20,6 +13,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
 app.MapControllers();
 app.Run();

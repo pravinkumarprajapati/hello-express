@@ -12,4 +12,7 @@ public interface ITrainingScheduleRepository
     Task<IReadOnlyCollection<LeaveRecord>> GetLeavesAsync(CancellationToken cancellationToken = default);
     Task<IReadOnlyCollection<TrainingAssignment>> GetAssignmentsAsync(CancellationToken cancellationToken = default);
     Task SaveAssignmentsAsync(IEnumerable<TrainingAssignment> assignments, CancellationToken cancellationToken = default);
+    Task<IReadOnlyCollection<TrainingSession>> GetSessionsByTrainerAsync(Guid trainerId, CancellationToken cancellationToken = default);
+    Task UpsertLeavesAsync(IEnumerable<LeaveRecord> leaves, CancellationToken cancellationToken = default);
+    Task ClearAssignmentsForSessionAsync(Guid sessionId, CancellationToken cancellationToken = default);
 }
