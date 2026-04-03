@@ -1,0 +1,32 @@
+@page
+@model TMS.Web.Pages.IndexModel
+@{
+    ViewData["Title"] = "My Calendar";
+}
+
+<h1>My Training Calendar</h1>
+<p>Trainer view for assigned schedules and activities.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Mode</th>
+            <th>Activity</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var entry in Model.RosterEntries)
+    {
+        <tr>
+            <td>@entry.Date</td>
+            <td>@entry.TimeSlot</td>
+            <td>@entry.Location</td>
+            <td>@entry.Mode</td>
+            <td>@entry.ActivityType</td>
+        </tr>
+    }
+    </tbody>
+</table>

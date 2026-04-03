@@ -1,0 +1,36 @@
+@page
+@model TMS.Web.Pages.ConsolidatedModel
+@{
+    ViewData["Title"] = "Consolidated Schedule";
+}
+
+<h1>Manager/Admin Consolidated Schedule</h1>
+<p>Combined instructor schedule view by vertical.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Trainer</th>
+            <th>Department</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Mode</th>
+            <th>Activity</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var entry in Model.RosterEntries)
+    {
+        <tr>
+            <td>@entry.TrainerName</td>
+            <td>@entry.Department</td>
+            <td>@entry.Date</td>
+            <td>@entry.TimeSlot</td>
+            <td>@entry.Location</td>
+            <td>@entry.Mode</td>
+            <td>@entry.ActivityType</td>
+        </tr>
+    }
+    </tbody>
+</table>
